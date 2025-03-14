@@ -1,7 +1,7 @@
 INSERT INTO authority(authority_name) VALUES ('USER');
 INSERT INTO authority(authority_name) VALUES ('ADMIN');
 
-INSERT INTO users(user_name, real_name, password, email, phone_number, gender, user_authority)
+INSERT INTO user(user_name, real_name, password, email, phone_number, gender, user_authority)
 VALUES ('admin', 'administrator', '$2b$12$A0kgVpplgbH3ZZ1E89441eacUXljTTt7nP8I3RdLtW0P6/CXdEnCm', 'admin@gmail.com', '010-0000-0000',  'MALE', 'ADMIN'),
 ('user', '유저이름', '010-1111-1111', '$2a$10$AbLNyFNNFBekwJMX.833/ugdQLaB4Tv3DHGsGyQip1bJJrAFm9ufC', 'name@naver.com', 'MALE', 'USER'),
 ('user1', '유저이름', '010-1234-1432', '$2a$10$AbLNyFNNFBekwJMX.833/ugdQLaB4Tv3DHGsGyQip1bJJrAFm9ufC', 'name2@naver.com', 'FEMALE', 'USER');
@@ -29,5 +29,8 @@ VALUES ('2025-01-01', '2025-01-12', '2025년 아마추어 청소년 대회', '�
 INSERT INTO great(board_id, user_name, feed_back, is_active)
 VALUES (2, 'user1', true, true), (1, 'user', true, true);
 
-INSERT INTO friend_request(sender_name, receiver_name, approved)
-VALUES ('user', 'user1', false);
+INSERT INTO friend_request(receiver_name, sender_name, approved)
+VALUES ('user', 'user1', true);
+
+INSERT INTO friend(user_name, friend_name)
+VALUES ('user', 'user1');

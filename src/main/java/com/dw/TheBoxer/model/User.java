@@ -9,6 +9,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
+@Setter
 @ToString
 @Entity
 @Table(name = "user")
@@ -17,19 +18,15 @@ public class User {
     @Column(name="user_name")
     private String userName;
 
-    @Setter
     @Column(name = "real_name", nullable = false)
     private String realName;
 
-    @Setter
     @Column(name="password", nullable = false)
     private String password;
 
-    @Setter
     @Column(name="email", nullable = false)
     private String email;
 
-    @Setter
     @Column(name = "phone_number",nullable = false)
     private String phoneNumber;
 
@@ -49,8 +46,8 @@ public class User {
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
-            name = "friendship",
-            joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "friend_id"))
+            name = "friend",
+            joinColumns = @JoinColumn(name = "user_name"),
+            inverseJoinColumns = @JoinColumn(name = "friend_name"))
     private List<User> friends;
 }
