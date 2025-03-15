@@ -1,6 +1,7 @@
 package com.dw.TheBoxer.model;
 
 
+import com.dw.TheBoxer.enums.Reaction;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -12,7 +13,6 @@ import lombok.*;
 @Entity
 @Table(name = "great")
 public class Great { // 좋아요 기능
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -25,6 +25,7 @@ public class Great { // 좋아요 기능
     @JoinColumn(name = "user_name")
     private User user; // 유저(단방향)
 
-    @Column(name = "feed_back")
-    private Boolean feedBack; // true이면 좋아요 false이면 싫어요
+    @Column(name = "reaction")
+    @Enumerated(EnumType.STRING)
+    private Reaction reaction; // ENUM
 }

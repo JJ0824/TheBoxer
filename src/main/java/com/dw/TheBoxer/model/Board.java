@@ -45,4 +45,10 @@ public class Board {
 
     @OneToMany(mappedBy = "board") // 좋아요 모음
     private List<Great> greatList;
+
+    @Column(name = "count_like")
+    private Long countLike; // 좋아요 수
+
+    @Column(name = "count_dislike")
+    private Long countDisLike; // 싫어요 수
 }
