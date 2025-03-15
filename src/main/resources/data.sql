@@ -17,7 +17,7 @@ VALUES ('루틴 관리', true, '운동 루틴을 어떻게 관리하고 계신�
 ('식단 팁', true, '체중 감량을 위한 식단 조절 방법에 대해 이야기해봅시다. 식단 관리의 꿀팁을 공유해주세요!', 'user', '2025-03-14', '질문');
 
 INSERT INTO comment(content, add_date, board_id, user_name)
-VALUES ('닭가슴살도 맛있는데, 여러 브랜드가 있죠', '2025-03-14', 2, 'user1');
+VALUES ('닭가슴살도 맛있는데, 맛과 브랜드가 다양하게 있죠', '2025-03-14', 2, 'user1');
 
 INSERT INTO recomment(content, add_date, comment_id, user_name)
 VALUES ('한 번 시켜봐야겠네요. 추천하시는 브랜드 있나요?', '2025-03-14', 1, 'user');
@@ -26,8 +26,8 @@ INSERT INTO schedule(start_date, last_date, title, content)
 VALUES ('2025-01-01', '2025-01-12', '2025년 아마추어 청소년 대회', '경남 창원'),
 ('2025-04-01', '2025-04-15', '2025년 단증 취득 일자', '대전 유성구');
 
-INSERT INTO great(board_id, user_name, feed_back, is_active)
-VALUES (2, 'user1', true, true), (1, 'user', true, true);
+INSERT INTO great(board_id, user_name, feed_back)
+VALUES (2, 'user1', true), (1, 'user', true);
 
 INSERT INTO friend_request(receiver_name, sender_name, approved)
 VALUES ('user', 'user1', true);
