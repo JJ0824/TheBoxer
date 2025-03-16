@@ -51,4 +51,8 @@ public class Board {
 
     @Column(name = "count_dislike")
     private Long countDisLike; // 싫어요 수
+
+    @ManyToOne
+    @JoinColumn(name = "tag_id")  // 각 게시글은 하나의 태그를 가짐
+    private Tag tag;  // 게시글에 연결된 태그
 }

@@ -11,7 +11,7 @@ import java.time.LocalDate;
 @Setter
 @ToString
 @Entity
-@Table(name = "recomment")
+@Table(name = "re_comment")
 public class ReComment {  // 대댓글 기능
 
     @Id
@@ -23,6 +23,9 @@ public class ReComment {  // 대댓글 기능
 
     @Column(name = "add_date", updatable = false)
     private LocalDate addDate;
+
+    @Column(name = "modified_date")
+    private LocalDate modifiedDate; // 수정일
 
     @ManyToOne
     @JoinColumn(name = "comment_id")
