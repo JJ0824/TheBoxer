@@ -21,7 +21,7 @@ public class FriendRequest {
 
     @ManyToOne
     @JoinColumn(name = "receiver_name")
-    private User receiver; //하나의 유저가 많은 요청을 받을 수 있음
+    private User receiver; // 하나의 유저가 많은 요청을 받을 수 있음
 
     @Column(name = "approved")
     private boolean approved = false;  // 기본적으로 요청은 승인 X

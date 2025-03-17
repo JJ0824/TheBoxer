@@ -38,16 +38,16 @@ public class User {
     @JoinColumn(name = "user_authority")
     private Authority authority; // 권한
 
-    @OneToMany(mappedBy = "sender")
-    private List<FriendRequest> sendRequests;
-
-    @OneToMany(mappedBy = "receiver")
-    private List<FriendRequest> receivedRequests;
-
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(
-            name = "friend",
-            joinColumns = @JoinColumn(name = "user_name"),
-            inverseJoinColumns = @JoinColumn(name = "friend_name"))
-    private List<User> friends;
+//    @OneToMany(mappedBy = "sender")
+//    private List<FriendRequest> sendRequests;
+//
+//    @OneToMany(mappedBy = "receiver")
+//    private List<FriendRequest> receivedRequests;
+//
+//    @ManyToMany(cascade = CascadeType.ALL)
+//    @JoinTable(
+//            name = "friend",
+//            joinColumns = @JoinColumn(name = "user_name"),
+//            inverseJoinColumns = @JoinColumn(name = "friend_name"))
+//    private List<User> friends;
 }
