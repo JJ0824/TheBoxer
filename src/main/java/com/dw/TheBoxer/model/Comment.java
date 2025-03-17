@@ -14,7 +14,6 @@ import java.time.LocalDate;
 @Entity
 @Table(name = "comment")
 public class Comment { // 댓글 기능
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

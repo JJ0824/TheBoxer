@@ -16,6 +16,7 @@ import java.util.List;
 public class Board {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
 
     @Column(name="is_active")
@@ -23,7 +24,6 @@ public class Board {
 
     @Column(name = "title",nullable = false)
     private String title; // 제목 , 본문( 복싱화, 샌드백, 복싱글러브(온즈별),질문 제목)
-
 
     @Column(name = "content",nullable = false)
     private String content; // 설명

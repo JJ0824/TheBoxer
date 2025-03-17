@@ -17,6 +17,6 @@ public class Tag {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToMany(mappedBy = "tag")
+    @OneToMany(mappedBy = "tag") // 하나의 태그는 여러 게시글을 가질 수 있음
     private List<Board> boards;  // 해당 태그가 포함된 게시글 목록
 }

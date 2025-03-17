@@ -33,5 +33,5 @@ VALUES (2, 'user1', 'LIKE'), (1, 'user', 'DISLIKE');
 INSERT INTO friend_request(receiver_name, sender_name, approved)
 VALUES ('user2', 'user', false);
 
-INSERT INTO friendship(user_name, friend_name)
+INSERT INTO friendship(user_id, friend_id)
 VALUES ('user', 'user1');
