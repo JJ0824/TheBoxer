@@ -15,8 +15,12 @@ import java.util.List;
 public class Tag {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
 
-    @OneToMany(mappedBy = "tag") // 하나의 태그는 여러 게시글을 가질 수 있음
-    private List<Board> boards;  // 해당 태그가 포함된 게시글 목록
+    @Column(name = "name")
+    private String name;
+
+    @OneToMany(mappedBy = "tag")
+    private List<Board> boards;
 }

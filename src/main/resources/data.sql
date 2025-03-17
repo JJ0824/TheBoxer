@@ -13,9 +13,24 @@ INSERT INTO category(name) VALUES ('루틴');
 INSERT INTO category(name) VALUES ('식단');
 INSERT INTO category(name) VALUES ('질문');
 
-INSERT INTO board(title, is_active, content, user_name, add_date, category_name, count_like, count_dislike)
-VALUES ('루틴 관리', true, '운동 루틴을 어떻게 관리하고 계신가요? 효과적인 루틴을 함께 나누고 피드백을 주고받으면 좋겠습니다.', 'user1', '2025-03-14', '질문', 0, 1),
-('식단 팁', true, '체중 감량을 위한 식단 조절 방법에 대해 이야기해봅시다. 식단 관리의 꿀팁을 공유해주세요!', 'user', '2025-03-14', '질문', 1, 0);
+INSERT INTO tag(name) VALUES ('복싱화');
+INSERT INTO tag(name) VALUES ('복싱글러브');
+INSERT INTO tag(name) VALUES ('샌드백');
+INSERT INTO tag(name) VALUES ('잽');
+INSERT INTO tag(name) VALUES ('어퍼컷');
+INSERT INTO tag(name) VALUES ('훅');
+INSERT INTO tag(name) VALUES ('고단백');
+INSERT INTO tag(name) VALUES ('저탄수화물');
+INSERT INTO tag(name) VALUES ('주 3회 운동');
+INSERT INTO tag(name) VALUES ('상체 위주 운동');
+
+INSERT INTO user_profile(user_name) VALUES ('user');
+
+INSERT INTO user_profile_tag(user_name, tag_id) VALUES ('user', 1);
+
+INSERT INTO board(is_active, title, content, user_name, add_date, category_name, count_like, count_dislike, tag_name)
+VALUES (true, '루틴 관리', '운동 루틴을 어떻게 관리하고 계신가요? 효과적인 루틴을 함께 나누고 피드백을 주고받으면 좋겠습니다.', 'user1', '2025-03-14', '질문', 0, 1, '질문'),
+(true, '식단 팁', '체중 감량을 위한 식단 조절 방법에 대해 이야기해봅시다. 식단 관리의 꿀팁을 공유해주세요!', 'user', '2025-03-14', '질문', 1, 0, '질문');
 
 INSERT INTO comment(content, add_date, board_id, user_name)
 VALUES ('닭가슴살도 맛있는데, 맛과 브랜드가 다양하게 있죠', '2025-03-14', 2, 'user1');
@@ -31,7 +46,7 @@ INSERT INTO great(board_id, user_name, reaction)
 VALUES (2, 'user1', 'LIKE'), (1, 'user', 'DISLIKE');
 
 INSERT INTO friend_request(receiver_name, sender_name, approved)
-VALUES ('user2', 'user', false);
+VALUES ('user2', 'user', false), ('user', 'user1', true);
 
 INSERT INTO friendship(user_id, friend_id)
 VALUES ('user', 'user1');

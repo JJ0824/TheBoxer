@@ -15,16 +15,16 @@ import java.util.List;
 @Table(name = "user")
 public class User {
     @Id
-    @Column(name="user_name")
+    @Column(name = "user_name")
     private String userName;
 
     @Column(name = "real_name", nullable = false)
     private String realName;
 
-    @Column(name="password", nullable = false)
+    @Column(name = "password", nullable = false)
     private String password;
 
-    @Column(name="email", nullable = false)
+    @Column(name = "email", nullable = false)
     private String email;
 
     @Column(name = "phone_number",nullable = false)
