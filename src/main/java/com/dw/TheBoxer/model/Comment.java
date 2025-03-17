@@ -14,6 +14,7 @@ import java.time.LocalDate;
 @Entity
 @Table(name = "comment")
 public class Comment { // 댓글 기능
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -34,5 +35,11 @@ public class Comment { // 댓글 기능
     @ManyToOne
     @JoinColumn(name = "user_name")
     private User user;
+
+    @Column(name = "rating",nullable = false)
+    @Enumerated(EnumType.STRING)
+    private Rating rating; // ENUM 수정 필요
+
+
 
 }

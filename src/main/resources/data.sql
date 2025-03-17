@@ -1,11 +1,11 @@
 INSERT INTO authority(authority_name) VALUES ('USER');
 INSERT INTO authority(authority_name) VALUES ('ADMIN');
 
-INSERT INTO user(user_name, real_name, password, email, phone_number, gender, user_authority)
-VALUES ('admin', 'administrator', '$2b$12$A0kgVpplgbH3ZZ1E89441eacUXljTTt7nP8I3RdLtW0P6/CXdEnCm', 'admin@gmail.com', '010-0000-0000',  'MALE', 'ADMIN'),
-('user', '유저이름', '010-1111-1111', '$2a$10$AbLNyFNNFBekwJMX.833/ugdQLaB4Tv3DHGsGyQip1bJJrAFm9ufC', 'name@naver.com', 'MALE', 'USER'),
-('user1', '유저이름', '010-1222-1222', '$2a$10$AbLNyFNNFBekwJMX.833/ugdQLaB4Tv3DHGsGyQip1bJJrAFm9ufC', 'name2@naver.com', 'MALE', 'USER'),
-('user2', '유저이름', '010-1234-1432', '$2a$10$AbLNyFNNFBekwJMX.833/ugdQLaB4Tv3DHGsGyQip1bJJrAFm9ufC', 'name3@naver.com', 'FEMALE', 'USER');
+INSERT INTO user(user_name, real_name, password, email, phone_number, gender, user_authority, add_date)
+VALUES ('admin', 'administrator', '$2b$12$A0kgVpplgbH3ZZ1E89441eacUXljTTt7nP8I3RdLtW0P6/CXdEnCm', 'admin@gmail.com', '010-0000-0000',  'MALE', 'ADMIN', CURRENT_DATE()),
+('user', '유저이름', '010-1111-1111', '$2a$10$AbLNyFNNFBekwJMX.833/ugdQLaB4Tv3DHGsGyQip1bJJrAFm9ufC', 'name@naver.com', 'MALE', 'USER', CURRENT_DATE()),
+('user1', '유저이름', '010-1222-1222', '$2a$10$AbLNyFNNFBekwJMX.833/ugdQLaB4Tv3DHGsGyQip1bJJrAFm9ufC', 'name2@naver.com', 'MALE', 'USER', CURRENT_DATE()),
+('user2', '유저이름', '010-1234-1432', '$2a$10$AbLNyFNNFBekwJMX.833/ugdQLaB4Tv3DHGsGyQip1bJJrAFm9ufC', 'name3@naver.com', 'FEMALE', 'USER', CURRENT_DATE());
 
 INSERT INTO category(name) VALUES ('장비');
 INSERT INTO category(name) VALUES ('기술');
@@ -19,14 +19,11 @@ INSERT INTO tag(name) VALUES ('샌드백');
 INSERT INTO tag(name) VALUES ('잽');
 INSERT INTO tag(name) VALUES ('어퍼컷');
 INSERT INTO tag(name) VALUES ('훅');
-INSERT INTO tag(name) VALUES ('고단백');
-INSERT INTO tag(name) VALUES ('저탄수화물');
-INSERT INTO tag(name) VALUES ('주 3회 운동');
-INSERT INTO tag(name) VALUES ('상체 위주 운동');
+INSERT INTO tag(name) VALUES ('식단');
+INSERT INTO tag(name) VALUES ('루틴');
 
 INSERT INTO user_profile(user_name) VALUES ('user');
-
-INSERT INTO user_profile_tag(user_name, tag_id) VALUES ('user', 1);
+INSERT INTO user_profile(user_name) VALUES ('user1');
 
 INSERT INTO board(is_active, title, content, user_name, add_date, category_name, count_like, count_dislike, tag_name)
 VALUES (true, '루틴 관리', '운동 루틴을 어떻게 관리하고 계신가요? 효과적인 루틴을 함께 나누고 피드백을 주고받으면 좋겠습니다.', 'user1', '2025-03-14', '질문', 0, 1, '질문'),

@@ -4,29 +4,35 @@ import com.dw.TheBoxer.enums.Gender;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
-@Setter
 @ToString
 @Entity
 @Table(name = "user")
 public class User {
+
     @Id
-    @Column(name = "user_name")
+    @Column(name="user_name")
     private String userName;
 
+    @Setter
     @Column(name = "real_name", nullable = false)
     private String realName;
 
-    @Column(name = "password", nullable = false)
+    @Setter
+    @Column(name="password", nullable = false)
     private String password;
 
-    @Column(name = "email", nullable = false)
+    @Setter
+    @Column(name="email", nullable = false)
     private String email;
 
+    @Setter
     @Column(name = "phone_number",nullable = false)
     private String phoneNumber;
 
@@ -38,16 +44,17 @@ public class User {
     @JoinColumn(name = "user_authority")
     private Authority authority; // 권한
 
+    @Column(name = "add_date", updatable = false)
+    private LocalDate addDate; // 회원가입일자
+
 //    @OneToMany(mappedBy = "sender")
-//    private List<FriendRequest> sendRequests;
+//    private List<FriendRequest> sendRequests = new ArrayList<>();
 //
 //    @OneToMany(mappedBy = "receiver")
-//    private List<FriendRequest> receivedRequests;
-//
-//    @ManyToMany(cascade = CascadeType.ALL)
-//    @JoinTable(
-//            name = "friend",
-//            joinColumns = @JoinColumn(name = "user_name"),
-//            inverseJoinColumns = @JoinColumn(name = "friend_name"))
-//    private List<User> friends;
+//    private List<FriendRequest> receivedRequests = new ArrayList<>();
+
+
+
+
+
 }
